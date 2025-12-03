@@ -929,16 +929,16 @@
 // This short retract is done immediately, before parking the nozzle.
     #define FILAMENT_CHANGE_UNLOAD_FEEDRATE 80 // (mm/s) Unload filament feedrate. This can be pretty fast.
     #define FILAMENT_CHANGE_UNLOAD_ACCEL 1250 // (mm/s^2) Lower acceleration may allow a faster feedrate.
-    #define FILAMENT_CHANGE_UNLOAD_LENGTH 400 // (mm) The length of filament for a complete unload.
+    #define FILAMENT_CHANGE_UNLOAD_LENGTH 40 // (mm) The length of filament for a complete unload. MODIFIED
 //   For Bowden, the full length of the tube and nozzle.
 //   For direct drive, the full length of the nozzle.
 //   Set to 0 for manual unloading.
     #define FILAMENT_CHANGE_SLOW_LOAD_FEEDRATE 10 // (mm/s) Slow move when starting load.
-    #define FILAMENT_CHANGE_SLOW_LOAD_LENGTH 40 // (mm) Slow length, to allow time to insert material.
+    #define FILAMENT_CHANGE_SLOW_LOAD_LENGTH 5 // (mm) Slow length, to allow time to insert material.
 // 0 to disable start loading and skip to fast load only
     #define FILAMENT_CHANGE_FAST_LOAD_FEEDRATE 80 // (mm/s) Load filament feedrate. This can be pretty fast.
     #define FILAMENT_CHANGE_FAST_LOAD_ACCEL 625 // (mm/s^2) Lower acceleration may allow a faster feedrate.
-    #define FILAMENT_CHANGE_FAST_LOAD_LENGTH 320 // (mm) Load length of filament, from extruder gear to nozzle.
+    #define FILAMENT_CHANGE_FAST_LOAD_LENGTH 40 // (mm) Load length of filament, from extruder gear to nozzle.
 //   For Bowden, the full length of the tube and nozzle.
 //   For direct drive, the full length of the nozzle.
 //#define ADVANCED_PAUSE_CONTINUOUS_PURGE       // Purge continuously up to the purge length until interrupted.
@@ -1123,7 +1123,7 @@
     #endif
 
     #if AXIS_IS_TMC(E0)
-        #define E0_CURRENT 400 //520
+        #define E0_CURRENT 318 //520
         #define E0_MICROSTEPS 16 //32
         #define E0_RSENSE 0.22
     #endif
@@ -1201,8 +1201,8 @@
    * When disabled, Marlin will use spreadCycle stepping mode.
    */
     #define STEALTHCHOP_XY
-    #define STEALTHCHOP_Z
-//  #define STEALTHCHOP_E
+    #define STEALTHCHOP_Z //MODIFIED
+//  //#define STEALTHCHOP_E
 
     /**
    * Optimize spreadCycle chopper parameters by using predefined parameter sets
@@ -1246,11 +1246,11 @@
    * STEALTHCHOP_(XY|Z|E) must be enabled to use HYBRID_THRESHOLD.
    * M913 X/Y/Z/E to live tune the setting
    */
-//#define HYBRID_THRESHOLD
+#define HYBRID_THRESHOLD //MODIFIED
 
-    #define X_HYBRID_THRESHOLD 100 // [mm/s]
+    #define X_HYBRID_THRESHOLD 85 // [mm/s]
     #define X2_HYBRID_THRESHOLD 100
-    #define Y_HYBRID_THRESHOLD 100
+    #define Y_HYBRID_THRESHOLD 85
     #define Y2_HYBRID_THRESHOLD 100
     #define Z_HYBRID_THRESHOLD 3
     #define Z2_HYBRID_THRESHOLD 3
